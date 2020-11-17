@@ -5,7 +5,5 @@ export const entryPoint: RequestHandler = (req, res) => {
   // @ts-ignore
   const basePath = req.proxyUrl || req.baseUrl
 
-  res.render('index', {
-    basePath,
-  })
+ res.render('index', { basePath: process.env.BACKEND_URL + basePath })
 }
